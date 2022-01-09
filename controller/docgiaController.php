@@ -4,7 +4,7 @@ require_once 'model/docgiaModel.php';
 class docgiaController{
     function index(){
         $dgModal = new docgiaModal();
-        $dgonor = $dgModal->getAllDb();
+        $docgia = $dgModal->getAllDb();
         require_once 'view/docgia/index.php';
     }
     function admin(){
