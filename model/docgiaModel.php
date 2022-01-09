@@ -44,14 +44,14 @@ class docgiaModal{
         $connection = $this->connectDb();
         $querySelect = "SELECT * FROM docgia WHERE madg={$dg_id}";
         $results = mysqli_query($connection, $querySelect);
-        $bdArr = [];
+        $dgArr = [];
         if (mysqli_num_rows($results) > 0) {
-            $bds = mysqli_fetch_all($results, MYSQLI_ASSOC);
-            $bdArr = $bds[0];
+            $dgs = mysqli_fetch_all($results, MYSQLI_ASSOC);
+            $dgArr = $dgs[0];
         }
         $this->closeDb($connection);
 
-        return $bdArr;
+        return $dgArr;
     }
     public function update($madg = []) {
         $connection = $this->connectDb();
@@ -65,7 +65,7 @@ class docgiaModal{
     public function delete($id = null) {
         $connection = $this->connectDb();
 
-        $queryDelete = "DELETE FROM docgia WHERE madogia = {$id}";
+        $queryDelete = "DELETE FROM docgia WHERE madg = {$id}";
         $isDelete = mysqli_query($connection, $queryDelete);
 
         $this->closeDb($connection);
