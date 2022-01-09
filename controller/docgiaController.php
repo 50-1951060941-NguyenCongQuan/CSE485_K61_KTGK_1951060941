@@ -23,7 +23,7 @@ class docgiaController{
             $ngaycapthe = $_POST['ngaycapthe'];
             $ngayhethan = $_POST['ngayhethan'];
             $diachi = $_POST['diachi'];
-            if(empty($madg) || empty($_POST['hovaten'])|| empty($gioitinh) || empty($namsinh) || empty($nghenghiep) || empty($ngaycapthe) || empty($ngayhethan)|| empty($diachi)){
+            if(empty($madg) || empty($hovaten)|| empty($_POST['gioitinh']) || empty($namsinh) || empty($nghenghiep) || empty($ngaycapthe) || empty($ngayhethan)|| empty($diachi)){
                 $error = 'Thông tin chưa đầy đủ!';
             }else{
                 $gioitinh = $_POST['gioitinh'];
