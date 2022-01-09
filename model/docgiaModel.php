@@ -40,9 +40,9 @@ class docgiaModal{
     public function closeDb($connection = null) {
         mysqli_close($connection);
     }
-    public function getBDById($dg_id = null) {
+    public function getBDById($madg = null) {
         $connection = $this->connectDb();
-        $querySelect = "SELECT * FROM docgia WHERE madg={$dg_id}";
+        $querySelect = "SELECT * FROM docgia WHERE madg={$madg}";
         $results = mysqli_query($connection, $querySelect);
         $dgArr = [];
         if (mysqli_num_rows($results) > 0) {
@@ -53,19 +53,19 @@ class docgiaModal{
 
         return $dgArr;
     }
-    public function update($madg = []) {
+    public function update($dg = []) {
         $connection = $this->connectDb();
         $queryUpdate = "UPDATE docgia 
-        SET madg = '{$madg['madg']}', gioitinh = '{$madg['gioitinh']}', namsinh = '{$madg['namsinh']}', nghenghiep = '{$madg['nghenghiep']}', ngaycapthe = '{$$madg['ngaycapthe']}', ngayhethan = '{$madg['ngayhethan']}'  WHERE madg = {$madg['madg']}";
+        SET hovaten = '{$dg['hovaten']}', gioitinh = '{$dg['gioitinh']}', namsinh = '{$dg['namsinh']}', nghenghiep = '{$dg['nghenghiep']}', ngaycapthe = '{$dg['ngaycapthe']}', ngayhethan = '{$dg['ngayhethan']}'  WHERE madg = {$dg['madg']}";
         $isUpdate = mysqli_query($connection, $queryUpdate);
         $this->closeDb($connection);
 
         return $isUpdate;
     }
-    public function delete($id = null) {
+    public function delete($madg = null) {
         $connection = $this->connectDb();
 
-        $queryDelete = "DELETE FROM docgia WHERE madg = {$id}";
+        $queryDelete = "DELETE FROM docgia WHERE madg = {$madg}";
         $isDelete = mysqli_query($connection, $queryDelete);
 
         $this->closeDb($connection);

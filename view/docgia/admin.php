@@ -33,21 +33,21 @@ require_once 'view/commons/message.php';
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($docgia as $madg) {
+                        foreach ($docgia as $dg) {
                             $urlEdit =
-                            "index.php?controller=docgia&action=edit&bdid=" . $madg['madg'];
+                            "index.php?controller=docgia&action=edit&madg=" . $dg['madg'];
                             $urlDelete =
-                            "index.php?controller=docgia&action=delete&bdid=" . $madg['madg'];
+                            "index.php?controller=docgia&action=delete&madg=" . $dg['madg'];
                         ?>
                             <tr>
-                                <th scope="row"><?php echo $madg['madg'] ?></th>
-                                <td><?php echo $madg['hovaten'] ?></td>
-                                <td><?php echo $madg['gioitinh'] ?></td>
-                                <td><?php echo $madg['namsinh'] ?></td>
-                                <td><?php echo $madg['nghenghiep'] ?></td>
-                                <td><?php echo $madg['ngaycapthe'] ?></td>
-                                <td><?php echo $madg['ngayhethan'] ?></td>
-                                <td><?php echo $madg['diachi'] ?></td>
+                                <th scope="row"><?php echo $dg['madg'] ?></th>
+                                <td><?php echo $dg['hovaten'] ?></td>
+                                <td><?php echo $dg['gioitinh'] ?></td>
+                                <td><?php echo $dg['namsinh'] ?></td>
+                                <td><?php echo $dg['nghenghiep'] ?></td>
+                                <td><?php echo $dg['ngaycapthe'] ?></td>
+                                <td><?php echo $dg['ngayhethan'] ?></td>
+                                <td><?php echo $dg['diachi'] ?></td>
                                 <td><a href="<?php echo $urlEdit ?>"><i class="bi bi-pencil-square"></i></a></td>
                                 <td><a onclick="return confirm('Xóa khỏi danh sách?')" href="<?php echo $urlDelete ?>"><i class="bi bi-trash"></i></a></td>
                             </tr>
