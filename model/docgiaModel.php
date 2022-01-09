@@ -22,8 +22,8 @@ class docgiaModal{
     public function insert($param = []) {
         $connection = $this->connectDb();
         //tạo và thực thi truy vấn
-        $queryInsert = "INSERT INTO docgia (madg, hovaten, gioitinh, namsinh, nghenghiep, ngaycapthe, ngayhethan, diachi)
-        VALUES ('{$param['madg']}', '{$param['gioitinh']}', '{$param['namsinh']}', '{$param['nghenghiep']}', '{$param['ngaycapthe']}', '{$param['ngayhethan']}', '{$param['diachi']}')";
+        $queryInsert = "INSERT INTO docgia ( hovaten, gioitinh, namsinh, nghenghiep, ngaycapthe, ngayhethan, diachi)
+        VALUES ('{$param['hovaten']}', '{$param['gioitinh']}', '{$param['namsinh']}', '{$param['nghenghiep']}', '{$param['ngaycapthe']}', '{$param['ngayhethan']}', '{$param['diachi']}')";
         $isInsert = mysqli_query($connection, $queryInsert);
         $this->closeDb($connection);
 
@@ -56,7 +56,7 @@ class docgiaModal{
     public function update($dg = []) {
         $connection = $this->connectDb();
         $queryUpdate = "UPDATE docgia 
-        SET hovaten = '{$dg['hovaten']}', gioitinh = '{$dg['gioitinh']}', namsinh = '{$dg['namsinh']}', nghenghiep = '{$dg['nghenghiep']}', ngaycapthe = '{$dg['ngaycapthe']}', ngayhethan = '{$dg['ngayhethan']}'  WHERE madg = {$dg['madg']}";
+        SET hovaten = '{$dg['hovaten']}', gioitinh = '{$dg['gioitinh']}', namsinh = '{$dg['namsinh']}', nghenghiep = '{$dg['nghenghiep']}', ngaycapthe = '{$dg['ngaycapthe']}', ngayhethan = '{$dg['ngayhethan']}' ,diachi = '{$dg['diachi']}' WHERE madg = {$dg['madg']}";
         $isUpdate = mysqli_query($connection, $queryUpdate);
         $this->closeDb($connection);
 

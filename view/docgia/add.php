@@ -10,10 +10,7 @@ require 'view/template/header.php'
             <div class="col-md-8 ms-auto me-auto">
                 <h4>Thông tin đọc giả</h4>
                 <form class="row g-3 needs-validation" method="post" action="" novalidate>
-                    <div class="col-md-12">
-                        <label for="validationCustom01" class="form-label">Mã độc giả</label>
-                        <input type="text" class="form-control" name="madg" id="validationCustom01" value="" required>
-                    </div>
+                   
                     <div class="col-md-12">
                         <label for="validationCustom01" class="form-label">Họ và Tên</label>
                         <input type="text" class="form-control" name="hovaten" id="validationCustom01" value="" required>
